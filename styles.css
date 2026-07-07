@@ -1216,7 +1216,8 @@ textarea {
 }
 
 .project-card__type,
-.project-card__status {
+.project-card__status,
+.project-card__link {
   margin: 0;
   color: var(--accent);
   font-size: 0.72rem;
@@ -1228,6 +1229,32 @@ textarea {
 .project-card__status {
   margin-top: auto;
   color: var(--subtle);
+}
+
+.project-card__link {
+  display: inline-flex;
+  width: fit-content;
+  margin-top: auto;
+  align-items: center;
+  gap: 0.4rem;
+  border: 1px solid rgba(0, 212, 212, 0.34);
+  border-radius: var(--radius);
+  padding: 0.62rem 0.75rem;
+  background: rgba(0, 212, 212, 0.08);
+  color: var(--accent);
+}
+
+.project-card__link::after {
+  content: "->";
+  font-size: 0.8rem;
+}
+
+.project-card__link:hover,
+.project-card__link:focus-visible {
+  border-color: var(--accent);
+  background: rgba(0, 212, 212, 0.14);
+  color: var(--text);
+  transform: translateY(-1px);
 }
 
 .project-card h3 {
