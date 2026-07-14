@@ -7,6 +7,55 @@ const form = document.querySelector("[data-inspection-form]");
 const status = document.querySelector("[data-form-status]");
 
 const config = window.jonaSiteConfig || {};
+const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+const updateHeaderState = () => {
+  header?.classList.toggle("is-scrolled", window.scrollY > 8);
+};
+
+updateHeaderState();
+window.addEventListener("scroll", updateHeaderState, { passive: true });
+
+if (!prefersReducedMotion && "IntersectionObserver" in window) {
+  const revealTargets = document.querySelectorAll(
+    [
+      ".section-content",
+      ".problem-point",
+      ".inspect-checklist li",
+      ".method-card",
+      ".positioning-content",
+      ".offer-card",
+      ".project-card",
+      ".about__profile",
+      ".about-content",
+      ".contact-header",
+      ".contact-form"
+    ].join(", ")
+  );
+
+  document.documentElement.classList.add("motion-ready");
+
+  const revealObserver = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("is-visible");
+          revealObserver.unobserve(entry.target);
+        }
+      });
+    },
+    {
+      rootMargin: "0px 0px -12% 0px",
+      threshold: 0.14
+    }
+  );
+
+  revealTargets.forEach((target, index) => {
+    target.classList.add("reveal");
+    target.style.setProperty("--reveal-delay", `${Math.min((index % 4) * 70, 210)}ms`);
+    revealObserver.observe(target);
+  });
+}
 
 document.querySelectorAll("[data-price='inspection']").forEach((price) => {
   if (config.inspectionPrice) {
