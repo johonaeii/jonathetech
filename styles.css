@@ -2420,3 +2420,174 @@ textarea {
     transform: none;
   }
 }
+
+/* ---------- Intake form (intake.html) ---------- */
+.intake {
+  padding: 7rem 0 5rem;
+}
+
+.intake__inner {
+  width: min(760px, calc(100% - 2rem));
+}
+
+.intake__header {
+  margin-bottom: 2rem;
+}
+
+.intake__header h1 {
+  margin: 0 0 0.75rem;
+  font-size: clamp(2.2rem, 6vw, 3.4rem);
+  line-height: 1.05;
+}
+
+.intake__intro {
+  margin: 0;
+  color: var(--muted);
+  font-size: 1.05rem;
+  line-height: 1.6;
+}
+
+.intake-form fieldset {
+  min-width: 0;
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+.intake-step {
+  display: grid;
+  gap: 1.25rem;
+}
+
+.intake-step[hidden] {
+  display: none;
+}
+
+.intake-step__title {
+  margin-bottom: 0.25rem;
+  color: var(--accent);
+  font-size: 0.8rem;
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.intake-form:not(.is-stepped) .intake-step + .intake-step {
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--line);
+}
+
+.intake-progress {
+  display: none;
+  gap: 0.6rem;
+}
+
+.intake-form.is-stepped .intake-progress {
+  display: grid;
+}
+
+.intake-progress__meta {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  color: var(--subtle);
+  font-size: 0.85rem;
+  font-weight: 750;
+}
+
+.intake-progress__track {
+  height: 6px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.08);
+  overflow: hidden;
+}
+
+.intake-progress__bar {
+  width: 25%;
+  height: 100%;
+  border-radius: inherit;
+  background: var(--accent);
+  transition: width 320ms var(--ease-premium);
+}
+
+.intake-form select {
+  min-height: 52px;
+  padding: 0.82rem;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: var(--radius);
+  background: rgba(255, 255, 255, 0.065);
+  color: var(--text);
+  font-size: 1rem;
+}
+
+.intake-form select:focus {
+  outline: none;
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px rgba(0, 212, 212, 0.12);
+}
+
+.intake-form select option {
+  background: var(--surface);
+  color: var(--text);
+}
+
+.checkbox-group input[type="radio"] {
+  width: 18px;
+  height: 18px;
+  flex: none;
+  accent-color: var(--accent);
+  cursor: pointer;
+}
+
+.checkbox-group--stack {
+  grid-template-columns: 1fr;
+}
+
+.checkbox-group label:has(input:checked) {
+  border-color: var(--accent);
+  background: var(--accent-soft);
+  color: var(--text);
+}
+
+.intake-nav {
+  display: flex;
+  gap: 0.75rem;
+}
+
+.intake-nav .button {
+  flex: 1;
+  min-height: 52px;
+}
+
+.intake-nav [hidden] {
+  display: none;
+}
+
+@media (max-width: 640px) {
+  .intake {
+    padding: 5.5rem 0 3rem;
+  }
+
+  .intake__inner {
+    width: calc(100% - 1rem);
+  }
+
+  .intake-progress__meta span:last-child {
+    display: none;
+  }
+
+  .intake-form .checkbox-group {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0.5rem;
+  }
+
+  .intake-form .checkbox-group--stack {
+    grid-template-columns: 1fr;
+  }
+
+  .intake-form .checkbox-group label {
+    min-height: 48px;
+    padding: 0.55rem 0.65rem;
+    font-size: 0.92rem;
+  }
+}

@@ -1,0 +1,230 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Inspection Intake | Jona the Tech</title>
+    <meta
+      name="description"
+      content="Five-minute intake for your $250 Digital Trust Inspection. Tell me about your business and where customers find you."
+    >
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <header class="site-header" data-site-header>
+      <a class="brand" href="/" aria-label="Jona the Tech home">
+        <span class="brand__mark" aria-hidden="true">JT</span>
+        <span class="brand__text">
+          <strong>Jona the Tech</strong>
+        </span>
+      </a>
+    </header>
+
+    <main>
+      <section class="section intake" aria-labelledby="intake-title">
+        <div class="section__inner intake__inner">
+          <div class="intake__header">
+            <p class="section-eyebrow">Digital Trust Inspection · About 5 minutes</p>
+            <h1 id="intake-title">Tell me about your business.</h1>
+            <p class="intake__intro">
+              Your answers let me start your inspection without a long phone call.
+              Skip anything you're not sure about. I'll ask when we talk.
+            </p>
+          </div>
+
+          <form
+            class="contact-form intake-form"
+            name="client-intake"
+            method="POST"
+            netlify
+            netlify-honeypot="bot-field"
+            action="/success"
+            data-intake-form
+            novalidate
+          >
+            <input type="hidden" name="form-name" value="client-intake">
+            <p class="hidden">
+              <label>Do not fill this out: <input name="bot-field"></label>
+            </p>
+
+            <div class="intake-progress" aria-hidden="true" data-intake-progress>
+              <div class="intake-progress__meta">
+                <span data-intake-step-label>Step 1 of 4</span>
+                <span data-intake-step-name>You and your business</span>
+              </div>
+              <div class="intake-progress__track">
+                <div class="intake-progress__bar" data-intake-bar></div>
+              </div>
+            </div>
+
+            <!-- STEP 1 -->
+            <fieldset class="intake-step" data-step="1" data-step-name="You and your business">
+              <legend class="intake-step__title">You and your business</legend>
+
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="name">Your name</label>
+                  <input id="name" name="name" type="text" autocomplete="name" required>
+                </div>
+                <div class="form-group">
+                  <label for="business-name">Business name</label>
+                  <input id="business-name" name="business-name" type="text" autocomplete="organization" required>
+                </div>
+              </div>
+
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="contact">Phone or email</label>
+                  <input id="contact" name="contact" type="text" autocomplete="tel" inputmode="email" placeholder="505-555-0123 or you@email.com" required>
+                </div>
+                <div class="form-group">
+                  <label for="area">Town or area you serve</label>
+                  <input id="area" name="area" type="text" placeholder="Shiprock, Farmington, Albuquerque..." required>
+                </div>
+              </div>
+
+              <fieldset class="form-group">
+                <legend>Best way to reach you</legend>
+                <div class="checkbox-group">
+                  <label><input type="radio" name="contact-preference" value="text" required> Text</label>
+                  <label><input type="radio" name="contact-preference" value="call"> Call</label>
+                  <label><input type="radio" name="contact-preference" value="email"> Email</label>
+                </div>
+              </fieldset>
+            </fieldset>
+
+            <!-- STEP 2 -->
+            <fieldset class="intake-step" data-step="2" data-step-name="Where customers find you">
+              <legend class="intake-step__title">Where customers find you</legend>
+
+              <div class="form-group">
+                <label for="business-type">What kind of business is it?</label>
+                <select id="business-type" name="business-type" required>
+                  <option value="">Choose one</option>
+                  <option>Appointments (salon, barber, tutoring, health, home care)</option>
+                  <option>Food and drink</option>
+                  <option>Trades and repair (construction, auto, HVAC)</option>
+                  <option>Retail or shop</option>
+                  <option>Arts, crafts, or music</option>
+                  <option>Lodging and tourism</option>
+                  <option>Other</option>
+                </select>
+              </div>
+
+              <div class="form-group">
+                <label for="website">Website (leave blank if you don't have one)</label>
+                <input id="website" name="website" type="url" inputmode="url" placeholder="https://">
+              </div>
+
+              <fieldset class="form-group">
+                <legend>Do you have a Google Business Profile? (shows up on Google Maps)</legend>
+                <div class="checkbox-group checkbox-group--stack">
+                  <label><input type="radio" name="google-profile" value="yes-i-manage-it" required> Yes, and I manage it</label>
+                  <label><input type="radio" name="google-profile" value="yes-someone-else"> Yes, but someone else set it up</label>
+                  <label><input type="radio" name="google-profile" value="no"> No</label>
+                  <label><input type="radio" name="google-profile" value="not-sure"> Not sure</label>
+                </div>
+              </fieldset>
+
+              <div class="form-group">
+                <label for="other-links">Other links (optional)</label>
+                <textarea id="other-links" name="other-links" rows="2" placeholder="Facebook, Instagram, booking page, Yelp..."></textarea>
+              </div>
+            </fieldset>
+
+            <!-- STEP 3 -->
+            <fieldset class="intake-step" data-step="3" data-step-name="What you want">
+              <legend class="intake-step__title">What you want</legend>
+
+              <fieldset class="form-group">
+                <legend>What do you want more of?</legend>
+                <div class="checkbox-group">
+                  <label><input type="checkbox" name="want-more-of" value="calls"> Calls</label>
+                  <label><input type="checkbox" name="want-more-of" value="bookings"> Bookings</label>
+                  <label><input type="checkbox" name="want-more-of" value="visits"> Visits</label>
+                  <label><input type="checkbox" name="want-more-of" value="reviews"> Reviews</label>
+                  <label><input type="checkbox" name="want-more-of" value="return-customers"> Return customers</label>
+                </div>
+              </fieldset>
+
+              <fieldset class="form-group">
+                <legend>How do customers find you now?</legend>
+                <div class="checkbox-group">
+                  <label><input type="checkbox" name="found-by" value="word-of-mouth"> Word of mouth</label>
+                  <label><input type="checkbox" name="found-by" value="google"> Google or Maps</label>
+                  <label><input type="checkbox" name="found-by" value="facebook"> Facebook</label>
+                  <label><input type="checkbox" name="found-by" value="instagram"> Instagram</label>
+                  <label><input type="checkbox" name="found-by" value="walk-ins"> Walk-ins or signs</label>
+                  <label><input type="checkbox" name="found-by" value="events"> Events or flea market</label>
+                </div>
+              </fieldset>
+
+              <div class="form-group">
+                <label for="broken">What feels broken, stale, or frustrating? (optional)</label>
+                <textarea id="broken" name="broken" rows="3" placeholder="Phone doesn't ring, old hours on Google, no reviews..."></textarea>
+              </div>
+
+              <div class="form-group">
+                <label for="competitor">A business you lose customers to, or admire (optional)</label>
+                <input id="competitor" name="competitor" type="text">
+              </div>
+            </fieldset>
+
+            <!-- STEP 4 -->
+            <fieldset class="intake-step" data-step="4" data-step-name="Last details">
+              <legend class="intake-step__title">Last details</legend>
+
+              <fieldset class="form-group">
+                <legend>Can you log in to your Google profile and website?</legend>
+                <div class="checkbox-group checkbox-group--stack">
+                  <label><input type="radio" name="access" value="yes-both" required> Yes, both</label>
+                  <label><input type="radio" name="access" value="only-one"> Only one of them</label>
+                  <label><input type="radio" name="access" value="no"> No</label>
+                  <label><input type="radio" name="access" value="not-sure"> Not sure</label>
+                </div>
+              </fieldset>
+
+              <fieldset class="form-group">
+                <legend>When do you want to get started?</legend>
+                <div class="checkbox-group">
+                  <label><input type="radio" name="timeline" value="asap" required> As soon as possible</label>
+                  <label><input type="radio" name="timeline" value="this-month"> Within a month</label>
+                  <label><input type="radio" name="timeline" value="exploring"> Just exploring</label>
+                </div>
+              </fieldset>
+
+              <div class="form-group">
+                <label for="anything-else">Anything else I should know? (optional)</label>
+                <textarea id="anything-else" name="anything-else" rows="3"></textarea>
+              </div>
+            </fieldset>
+
+            <p class="form-status" role="status" aria-live="polite" data-intake-status></p>
+
+            <div class="intake-nav">
+              <button class="button button--secondary" type="button" data-intake-back hidden>Back</button>
+              <button class="button button--primary" type="button" data-intake-next hidden>Next</button>
+              <button class="button button--primary" type="submit" data-intake-submit>Send my answers</button>
+            </div>
+          </form>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="footer-inner">
+        <div>
+          <strong>Jona the Tech</strong>
+          <p>Local digital trust systems for businesses in Albuquerque and the Four Corners.</p>
+        </div>
+        <nav class="footer-nav" aria-label="Footer navigation">
+          <a href="/">Home</a>
+          <a href="mailto:jonathetech@gmail.com">Email me</a>
+        </nav>
+      </div>
+    </footer>
+
+    <script src="script.js" defer></script>
+    <script src="intake.js" defer></script>
+  </body>
+</html>
