@@ -2452,8 +2452,17 @@ textarea {
 .intake-form legend,
 .intake-form label {
   max-width: 100%;
-  overflow-wrap: anywhere;
+  overflow-wrap: break-word;
+  hyphens: manual;
   white-space: normal;
+}
+
+.intake-form .checkbox-group input {
+  flex: none;
+}
+
+.intake-form .rating-group {
+  grid-template-columns: 1fr;
 }
 
 .intake {
@@ -2615,7 +2624,8 @@ textarea {
     gap: 0.5rem;
   }
 
-  .intake-form .checkbox-group--stack {
+  .intake-form .checkbox-group--stack,
+  .intake-form .rating-group {
     grid-template-columns: 1fr;
   }
 

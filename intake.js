@@ -83,5 +83,9 @@
     submitButton.textContent = "Sending...";
   });
 
+  form.addEventListener("input", () => {
+    status.textContent = "";
+  });
+
   showStep(0);
 })();

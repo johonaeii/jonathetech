@@ -1,0 +1,212 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Project Feedback | Jona the Tech</title>
+    <meta name="robots" content="noindex">
+    <meta
+      name="description"
+      content="Tell Jona how your project went."
+    >
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <header class="site-header" data-site-header>
+      <a class="brand" href="/" aria-label="Jona the Tech home">
+        <span class="brand__mark" aria-hidden="true">JT</span>
+        <span class="brand__text">
+          <strong>Jona the Tech</strong>
+        </span>
+      </a>
+    </header>
+
+    <main>
+      <section class="section intake" aria-labelledby="feedback-title">
+        <div class="section__inner intake__inner">
+          <div class="intake__header">
+            <p class="section-eyebrow">Project feedback · About 3 minutes</p>
+            <h1 id="feedback-title">How did it go?</h1>
+            <p class="intake__intro">
+              Thank you for trusting me with your business. Your honest answers help me
+              improve, and your words help other local owners decide to reach out.
+            </p>
+          </div>
+
+          <form
+            class="contact-form intake-form"
+            name="client-feedback"
+            method="POST"
+            netlify
+            netlify-honeypot="bot-field"
+            action="/feedback-thanks"
+            data-intake-form
+            novalidate
+          >
+            <input type="hidden" name="form-name" value="client-feedback">
+            <p class="hidden">
+              <label>Do not fill this out: <input name="bot-field"></label>
+            </p>
+
+            <div class="intake-progress" aria-hidden="true" data-intake-progress>
+              <div class="intake-progress__meta">
+                <span data-intake-step-label>Step 1 of 3</span>
+                <span data-intake-step-name>Your project</span>
+              </div>
+              <div class="intake-progress__track">
+                <div class="intake-progress__bar" data-intake-bar></div>
+              </div>
+            </div>
+
+            <!-- STEP 1 -->
+            <fieldset class="intake-step" data-step="1" data-step-name="Your project">
+              <legend class="intake-step__title">Your project</legend>
+
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="name">Your name</label>
+                  <input id="name" name="name" type="text" autocomplete="name" required>
+                </div>
+                <div class="form-group">
+                  <label for="business-name">Business name</label>
+                  <input id="business-name" name="business-name" type="text" autocomplete="organization" required>
+                </div>
+              </div>
+
+              <fieldset class="form-group">
+                <legend>What did I help with?</legend>
+                <div class="checkbox-group">
+                  <label><input type="checkbox" name="services" value="inspection"> Inspection</label>
+                  <label><input type="checkbox" name="services" value="google-profile"> Google profile</label>
+                  <label><input type="checkbox" name="services" value="website"> Website</label>
+                  <label><input type="checkbox" name="services" value="reviews"> Reviews setup</label>
+                  <label><input type="checkbox" name="services" value="booking-contact"> Booking</label>
+                  <label><input type="checkbox" name="services" value="monthly"> Monthly upkeep</label>
+                </div>
+              </fieldset>
+
+              <fieldset class="form-group">
+                <legend>Overall, how was working with me?</legend>
+                <div class="checkbox-group rating-group">
+                  <label><input type="radio" name="rating" value="5" required> 5 · Excellent</label>
+                  <label><input type="radio" name="rating" value="4"> 4 · Good</label>
+                  <label><input type="radio" name="rating" value="3"> 3 · Okay</label>
+                  <label><input type="radio" name="rating" value="2"> 2 · Poor</label>
+                  <label><input type="radio" name="rating" value="1"> 1 · Bad</label>
+                </div>
+              </fieldset>
+
+              <fieldset class="form-group">
+                <legend>What have you noticed since?</legend>
+                <div class="checkbox-group">
+                  <label><input type="checkbox" name="results" value="more-calls"> More calls</label>
+                  <label><input type="checkbox" name="results" value="more-bookings"> More bookings</label>
+                  <label><input type="checkbox" name="results" value="more-reviews"> More reviews</label>
+                  <label><input type="checkbox" name="results" value="found-online"> Found me online</label>
+                  <label><input type="checkbox" name="results" value="easier-to-manage"> Easier to run</label>
+                  <label><input type="checkbox" name="results" value="too-early"> Too early to tell</label>
+                </div>
+              </fieldset>
+            </fieldset>
+
+            <!-- STEP 2 -->
+            <fieldset class="intake-step" data-step="2" data-step-name="In your words">
+              <legend class="intake-step__title">In your words</legend>
+
+              <div class="form-group">
+                <label for="before">What was going on before we worked together?</label>
+                <textarea id="before" name="before" rows="3" placeholder="Old info on Google, hard to book, no website..."></textarea>
+              </div>
+
+              <div class="form-group">
+                <label for="after">What's different now?</label>
+                <textarea id="after" name="after" rows="3" placeholder="Customers can find us, the phone rings more..."></textarea>
+              </div>
+
+              <fieldset class="form-group">
+                <legend>Would you recommend me to another business owner?</legend>
+                <div class="checkbox-group">
+                  <label><input type="radio" name="recommend" value="yes" required> Yes</label>
+                  <label><input type="radio" name="recommend" value="maybe"> Maybe</label>
+                  <label><input type="radio" name="recommend" value="no"> No</label>
+                </div>
+              </fieldset>
+
+              <div class="form-group">
+                <label for="improve">What could I do better? (optional)</label>
+                <textarea id="improve" name="improve" rows="3"></textarea>
+              </div>
+            </fieldset>
+
+            <!-- STEP 3 -->
+            <fieldset class="intake-step" data-step="3" data-step-name="Sharing and referrals">
+              <legend class="intake-step__title">Sharing and referrals</legend>
+
+              <fieldset class="form-group">
+                <legend>Can I share your words on my website and social media?</legend>
+                <div class="checkbox-group checkbox-group--stack">
+                  <label><input type="radio" name="share-permission" value="name-and-business" required> Yes, with my name and business</label>
+                  <label><input type="radio" name="share-permission" value="first-name-only"> Yes, first name only</label>
+                  <label><input type="radio" name="share-permission" value="private"> No, keep it private</label>
+                </div>
+              </fieldset>
+
+              <fieldset class="form-group">
+                <legend>Can I show your website or logo as a project example?</legend>
+                <div class="checkbox-group">
+                  <label><input type="radio" name="showcase-permission" value="yes" required> Yes</label>
+                  <label><input type="radio" name="showcase-permission" value="ask-first"> Ask me first</label>
+                  <label><input type="radio" name="showcase-permission" value="no"> No</label>
+                </div>
+              </fieldset>
+
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="referral-name">Know a business owner who could use this? (optional)</label>
+                  <input id="referral-name" name="referral-name" type="text" placeholder="Name and business">
+                </div>
+                <div class="form-group">
+                  <label for="referral-contact">Their phone or email (optional)</label>
+                  <input id="referral-contact" name="referral-contact" type="text">
+                </div>
+              </div>
+
+              <fieldset class="form-group">
+                <legend>Want help keeping things up to date each month?</legend>
+                <div class="checkbox-group">
+                  <label><input type="radio" name="monthly-interest" value="yes" required> Yes, tell me more</label>
+                  <label><input type="radio" name="monthly-interest" value="later"> Maybe later</label>
+                  <label><input type="radio" name="monthly-interest" value="no"> No thanks</label>
+                </div>
+              </fieldset>
+            </fieldset>
+
+            <p class="form-status" role="status" aria-live="polite" data-intake-status></p>
+
+            <div class="intake-nav">
+              <button class="button button--secondary" type="button" data-intake-back hidden>Back</button>
+              <button class="button button--primary" type="button" data-intake-next hidden>Next</button>
+              <button class="button button--primary" type="submit" data-intake-submit>Send feedback</button>
+            </div>
+          </form>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="footer-inner">
+        <div>
+          <strong>Jona the Tech</strong>
+          <p>Local digital trust systems for businesses in Albuquerque and the Four Corners.</p>
+        </div>
+        <nav class="footer-nav" aria-label="Footer navigation">
+          <a href="/">Home</a>
+          <a href="mailto:jonathetech@gmail.com">Email me</a>
+        </nav>
+      </div>
+    </footer>
+
+    <script src="script.js" defer></script>
+    <script src="intake.js" defer></script>
+  </body>
+</html>
