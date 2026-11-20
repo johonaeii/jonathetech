@@ -2422,6 +2422,40 @@ textarea {
 }
 
 /* ---------- Intake form (intake.html) ---------- */
+/* Keep every column and field inside the card on narrow phones and large text sizes. */
+.intake-form,
+.intake-step,
+.intake-form .form-group {
+  grid-template-columns: minmax(0, 1fr);
+  min-width: 0;
+}
+
+.intake-form .form-row > *,
+.intake-form .form-group > * {
+  min-width: 0;
+}
+
+.intake-form input,
+.intake-form select,
+.intake-form textarea {
+  box-sizing: border-box;
+  width: 100%;
+  max-width: 100%;
+  min-width: 0;
+}
+
+.intake-form input[type="checkbox"],
+.intake-form input[type="radio"] {
+  width: 18px;
+}
+
+.intake-form legend,
+.intake-form label {
+  max-width: 100%;
+  overflow-wrap: anywhere;
+  white-space: normal;
+}
+
 .intake {
   padding: 7rem 0 5rem;
 }
